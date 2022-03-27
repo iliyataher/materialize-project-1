@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/materialize-rtl.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>مدیریت ساختمان</title>
+</head>
+<body dir="rtl">
+
+     <!-- header start --------------- -->
+     <div class="navbar-fixed">
+        <nav class="cyan lighten-2">
+          <a href="#!" class="brand-logo">
+            <img src="/assets/images/logo.png" alt="">
+          </a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+          <ul class="navbar_ul right hide-on-med-and-down main_ul_navbar">
+            <li class="tab"><a class="styleItemMenu" href="#content1">داشبورد</a></li>
+            <li class="tab"><a class="styleItemMenu" href="#content2">افزودن همسایه</a></li>
+            <li class="tab"><a class="styleItemMenu" href="#content3">مدیریت همسایگان</a></li>
+            <li class="tab"><a class="styleItemMenu" href="#content4">افزودن هزینه</a></li>
+            <li class="tab"><a class="styleItemMenu" href="#content5">پیام ها</a></li>
+          </ul>
+        </nav>    
+      </div>
+    <ul class="sidenav main_ul_navbar" id="mobile-demo">
+        <li class="tab"><a class="menu_item_list" href="#content1">داشبورد</a></li>
+        <li class="tab"><a class="menu_item_list" href="#content2">افزودن همسایه</a></li>
+        <li class="tab"><a class="menu_item_list" href="#content3">مدیریت همسایگان</a></li>
+        <li class="tab"><a class="menu_item_list" href="#content4">افزودن هزینه</a></li>
+        <li class="tab"><a class="menu_item_list" href="#content5">پیام ها</a></li>
+    </ul>
+     <!-- header end --------------- -->
+
+     <!-- <section class="main_content"> -->
+       <div id="content1" class="item_content orange">
+        <div class="row">
+          <div class="col m3 l2 hide-on-small-and-down"></div>
+          <div class="col s12 m6 l4 progressbar_grid px_4 px_md_5">
+            <span class="white-text">
+              <svg viewbox="0 0 100 100" style="filter: drop-shadow(0 0 5px black);">
+               <circle cx="50" cy="50" r="45" fill="rgba(255,255,255,0.8)" />
+               <path id="payProgressPath" fill="none" stroke-linecap="round" stroke-width="6" stroke="#006064"
+                   stroke-dasharray="126.5 , 126.5"
+                   d="M50 10
+                     a 40 40 0 0 1 0 80
+                     a 40 40 0 0 1 0 -80"/>
+               <text id="payProgressText" x="50" y="35" fill="#006064" text-anchor="middle" dy="7" font-size="20">50%</text>
+               <text x="50" y="55" fill="#006064" text-anchor="middle" dy="7" font-size="10">پرداخت ها</text>
+              </svg>
+            </span>
+          </div>
+
+
+          <div class="col s12 m6 l4 progressbar_grid px_4 px_md_5">
+            <span class="white-text">
+              <svg viewbox="0 0 100 100" style="filter: drop-shadow(0 0 5px black);">
+               <circle cx="50" cy="50" r="45" fill="rgba(255,255,255,0.8)" />
+               <path id="floorProgressPath" fill="none" stroke-linecap="round" stroke-width="6" stroke="#006064"
+                   stroke-dasharray="126.5 , 126.5"
+                   d="M50 10
+                     a 40 40 0 0 1 0 80
+                     a 40 40 0 0 1 0 -80"/>
+               <text id="floorProgressText" x="50" y="35" fill="#006064" text-anchor="middle" dy="7" font-size="20">50%</text>
+               <text x="50" y="55" fill="#006064" text-anchor="middle" dy="7" font-size="10"> واحد های پر</text>
+              </svg>
+            </span>
+          </div>
+          <div class="col m3 l2 hide-on-small-and-down"></div>
+        </div>
+       </div>
+       <div id="content2" class="item_content">
+        <div class="row p_1 ">
+          <div class="col m2 l3 hide-on-small-and-down"></div>
+          <form action="" class="main_form col s12 m8 l6">
+            <h5 class="center-align cyan-text text-darken-4">ثبت همسایه جدید</h5>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="last_name" type="text" class="validate">
+                <label for="last_name">نام و نام خانوادگی</label>
+              </div>
+             </div>
+    
+             <div class="row">
+              <div class="input-field col s6">
+                <input id="phone" type="text" class="validate">
+                <label for="phone">تماس</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="number" type="text" class="validate">
+                <label for="number">تعداد</label>
+              </div>
+             </div>
+    
+             <div class="row">
+              <div class="input-field col s6">
+                <select>
+                  <option value="" disabled selected>طبقه</option>
+                  <option value="1">طبقه 1</option>
+                  <option value="2">طبقه 2</option>
+                  <option value="3">طبقه 3</option>
+                </select>
+              </div>
+              <div class="input-field col s6">
+                <select>
+                  <option value="" disabled selected>واحد</option>
+                  <option value="1">واحد 1</option>
+                  <option value="2">واحد 2</option>
+                  <option value="3">واحد 3</option>
+                </select>
+              </div>
+             </div>
+    
+             <div class="row">
+              <p class="col s4">
+                <label>
+                  <input type="checkbox" />
+                  <span>ساکن</span>
+                </label>
+              </p>
+              <p class="col s4">
+                <label>
+                  <input class="with-gap" name="group1" type="radio"  />
+                  <span>مالک</span>
+                </label>
+              </p>
+              <p class="col s4">
+                <label>
+                  <input class="with-gap" name="group1" type="radio"  />
+                  <span>مستاجر</span>
+                </label>
+              </p>
+             </div>
+
+             <div class="row">
+              <div class="input-field col s4">
+                <select>
+                  <option value="" disabled selected>روز</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                </select>
+              </div>
+              <div class="input-field col s4">
+                <select>
+                  <option value="" disabled selected>ماه</option>
+                  <option value="1">فروردین</option>
+                  <option value="2">اردیبهشت</option>
+                  <option value="3">خرداد</option>
+                  <option value="4">تیر</option>
+                  <option value="5">مرداد</option>
+                  <option value="6">شهریور</option>
+                  <option value="7">مهر</option>
+                </select>
+              </div>
+              <div class="input-field col s4">
+                <select>
+                  <option value="" disabled selected>سال</option>
+                  <option value="1">1394</option>
+                  <option value="2">1395</option>
+                  <option value="3">1396</option>
+                  <option value="4">1397</option>
+                  <option value="5">1398</option>
+                  <option value="6">1399</option>
+                  <option value="7">1400</option>
+                </select>
+              </div>
+             </div>
+
+             <div class="row center-align">
+              <a class="waves-effect waves-light btn" id="buttonubSmit">button</a>
+              <label for="buttonubSmit" class="fas fa-telegram"></label>
+             </div>
+           </div>
+          </form>
+          <div class="col m2 l3 hide-on-small-and-down"></div>
+        </div>
+        
+       <div id="content3" class="item_content">
+        <div class="row p_1">
+          <div class="col s12">
+            <div class="main_table">
+              <h5 class="center-align cyan-text text-darken-4">مدیریت همسایگان</h5>
+              <table class="centered highlight responsive-table striped">
+                <thead>
+                  <tr>
+                    <th>نام و نام خانوادگی</th>
+                    <th>تماس</th>
+                    <th>تعداد</th>
+                    <th>طبقه</th>
+                    <th>واحد</th>
+                    <th>وضعیت سکونت</th>
+                    <th>وضعیت مالکیت</th>
+                    <th>تاریخ سکونت</th>
+                    <th>عملیات</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>قسم</td>
+                    <td>بساکی</td>
+                    <td>3نفر</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>ساکن</td>
+                    <td>مالک</td>
+                    <td>3روز پیش</td>
+                    <td>
+                      <i class="fas fa-trash-alt red-text"></i>
+                      <i class="fas fa-edit orange-text"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>عباس</td>
+                    <td>بساکی</td>
+                    <td>2نفر</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>ساکن</td>
+                    <td>مالک</td>
+                    <td>3روز پیش</td>
+                    <td>
+                      <i class="fas fa-trash-alt red-text"></i>
+                      <i class="fas fa-edit orange-text"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>محمد</td>
+                    <td>محمدی</td>
+                    <td>4نفر</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>ساکن</td>
+                    <td>مالک</td>
+                    <td>3روز پیش</td>
+                    <td>
+                      <i class="fas fa-trash-alt red-text"></i>
+                      <i class="fas fa-edit orange-text"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>اشکان</td>
+                    <td>رضایی</td>
+                    <td>5نفر</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>ساکن</td>
+                    <td>مالک</td>
+                    <td>3روز پیش</td>
+                    <td>
+                      <i class="fas fa-trash-alt red-text"></i>
+                      <i class="fas fa-edit orange-text"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>مهدی</td>
+                    <td>دارابی</td>
+                    <td>2نفر</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>ساکن</td>
+                    <td>مستاجر</td>
+                    <td>3روز پیش</td>
+                    <td>
+                      <i class="fas fa-trash-alt red-text"></i>
+                      <i class="fas fa-edit orange-text"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>جواد</td>
+                    <td>حسینی</td>
+                    <td>2نفر</td>
+                    <td>2</td>
+                    <td>6</td>
+                    <td>ساکن</td>
+                    <td>مالک</td>
+                    <td>3روز پیش</td>
+                    <td>
+                      <i class="fas fa-trash-alt red-text"></i>
+                      <i class="fas fa-edit orange-text"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>میلاد</td>
+                    <td>توانا</td>
+                    <td>3نفر</td>
+                    <td>3</td>
+                    <td>7</td>
+                    <td>ساکن</td>
+                    <td>مالک</td>
+                    <td>3روز پیش</td>
+                    <td>
+                      <i class="fas fa-trash-alt red-text"></i>
+                      <i class="fas fa-edit orange-text"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>سامان</td>
+                    <td>عسگری</td>
+                    <td>2نفر</td>
+                    <td>3</td>
+                    <td>8</td>
+                    <td>ساکن</td>
+                    <td>مستاجر</td>
+                    <td>3روز پیش</td>
+                    <td>
+                      <i class="fas fa-trash-alt red-text"></i>
+                      <i class="fas fa-edit orange-text"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>ناصر</td>
+                    <td>نیازی</td>
+                    <td>3نفر</td>
+                    <td>3</td>
+                    <td>9</td>
+                    <td>ساکن</td>
+                    <td>مالک</td>
+                    <td>3روز پیش</td>
+                    <td>
+                      <i class="fas fa-trash-alt red-text"></i>
+                      <i class="fas fa-edit orange-text"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+       </div>
+       <div id="content4" class="item_content">
+         <div class="row p_1">
+          <div class="col m2 l3 hide-on-med-and-down"></div>
+           <div class="col s12 m8 l6">
+             <div class="main_form" style="overflow: hidden;">
+               <h5 class="center-align cyan-text text-darken-4">افزودن هزینه</h5>
+               <form class="centered">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <select>
+                      <option value="" disabled selected>برای</option>
+                      <option value="1">همه همسایه ها</option>
+                      <option value="1">فقط مالکین</option>
+                      <option value="1">فقط مستاجرین</option>
+                      <option value="1">واحد 1</option>
+                      <option value="1">واحد 2</option>
+                      <option value="1">واحد 3</option>
+                      <option value="1">واحد 4</option>
+                      <option value="1">...</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="babat" type="text" class="validate autocomplete">
+                    <label for="babat">بابت</label>
+                    </div>
+                </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="money" type="text" class="validate">
+                      <label for="money">به مبلغ</label>
+                    </div> 
+                  </div>
+                <div class="row">
+                  <p class="col s6">
+                    <label>
+                      <input class="with-gap" name="group1" type="radio"  />
+                      <span>الزامی</span>
+                    </label>
+                  </p>
+                  <p class="col s6">
+                    <label>
+                      <input class="with-gap" name="group1" type="radio"  />
+                      <span>اختیاری</span>
+                    </label>
+                  </p>
+                </div>
+                <div class="row">
+                  <div class="input-field col s4">
+                    <select>
+                      <option value="" disabled selected>روز</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                    </select>
+                  </div>
+                  <div class="input-field col s4">
+                    <select>
+                      <option value="" disabled selected>ماه</option>
+                      <option value="1">فروردین</option>
+                      <option value="2">اردیبهشت</option>
+                      <option value="3">خرداد</option>
+                      <option value="4">تیر</option>
+                      <option value="5">مرداد</option>
+                      <option value="6">شهریور</option>
+                      <option value="7">مهر</option>
+                    </select>
+                  </div>
+                  <div class="input-field col s4">
+                    <select>
+                      <option value="" disabled selected>سال</option>
+                      <option value="1">1394</option>
+                      <option value="2">1395</option>
+                      <option value="3">1396</option>
+                      <option value="4">1397</option>
+                      <option value="5">1398</option>
+                      <option value="6">1399</option>
+                      <option value="7">1400</option>
+                    </select>
+                  </div>
+                 </div>
+                 <div class="row center-align">
+                  <a class="waves-effect waves-light btn">submit</a>
+                 </div>
+                </form>
+                <div class="col m2 l3 hide-on-med-and-down"></div>
+             </div>
+           </div>
+         </div>
+         
+       </div>
+       <div id="content5" class="item_content">
+        <div class="row p_1">
+          <div class="col s12">
+            <ul class="collapsible collection main_list_messages">
+
+              <li class="collection-item avatar waves-effect waves-green col s12">
+
+                <div class="collapsible-header">
+                  <img src="/assets/images/770b53b7-0eb8-495f-97f5-ee5b84065f32140003140133593610673.jpg" class="circle">
+                  <p>
+                    عنوان پیام 1
+                    <br>
+                    1400/02/09 توسط <span class="cyan-text">قاسم بساکی</span>
+                  </p>             
+                </div>
+
+                <div class="collapsible-body">
+                  <p>یک برنامه نویس - یک آموزگار - یک توسعه دهنده - برنامه نویس وب - توسعه دهنده وب سایت 
+                  </p>
+                </div>
+
+              </li>
+
+              <li class="collection-item avatar waves-effect waves-green col s12">
+
+                <div class="collapsible-header">
+                  <img src="/assets/images/7696a70c-0175-4f64-95e3-8688d82ad896140002101538324288857.jpeg" class="circle">
+                  <p>
+                    عنوان پیام 2
+                    <br>
+                    1400/02/09 توسط <span class="cyan-text">میلاد دهیامی</span>
+                  </p>             
+                </div>
+
+                <div class="collapsible-body">
+                  <p>یک برنامه نویس - یک آموزگار - یک توسعه دهنده - برنامه نویس وب - توسعه دهنده وب سایت 
+                  </p>
+                </div>
+
+              </li>
+
+              <li class="collection-item avatar waves-effect waves-green col s12">
+
+                <div class="collapsible-header">
+                  <img src="/assets/images/6ceb756d-bc3d-4f06-ae67-6fee7e066eba140001081854274214902.jpg" class="circle">
+                  <p>
+                    عنوان پیام 3
+                    <br>
+                    1400/02/09 توسط <span class="cyan-text">امیرحسین امیری</span>
+                  </p>             
+                </div>
+
+                <div class="collapsible-body">
+                  <p>یک برنامه نویس - یک آموزگار - یک توسعه دهنده - برنامه نویس وب - توسعه دهنده وب سایت 
+                  </p>
+                </div>
+
+              </li>
+
+              <li class="collection-item avatar waves-effect waves-green col s12">
+
+                <div class="collapsible-header">
+                  <img src="/assets/images/bc67f76b-7cef-4bcb-a428-353cd094b6e0140008032128185882022.jpg" class="circle">
+                  <p>
+                    عنوان پیام 4
+                    <br>
+                    1400/02/09 توسط <span class="cyan-text">حسین عنایتی</span>
+                  </p>             
+                </div>
+
+                <div class="collapsible-body">
+                  <p>یک برنامه نویس - یک آموزگار - یک توسعه دهنده - برنامه نویس وب - توسعه دهنده وب سایت 
+                  </p>
+                </div>
+
+              </li>
+
+            </ul>
+          </div>
+        </div>
+       </div>
+     <!-- </section> -->
+
+     <div class="fixed-action-btn toolbar hide-on-med-and-up">
+      <a class="btn-floating btn-large cyan darken-3 circleMenu">
+        <i class="large fas fa-bars"></i>
+      </a>
+      <ul>
+        <li class="quick_access_items"><a class="btn-floating"><i class="fas fa-user-plus"></i></a></li>
+        <li class="quick_access_items"><a class="btn-floating"><i class="fas fa-users"></i></a></li>
+        <li class="quick_access_items"><a class="btn-floating"><i class="fas fa-money-bill-wave"></i></a></li>
+        <li class="quick_access_items"><a class="btn-floating"><i class="fas fa-envelope"></i></a></li>
+      </ul>
+    </div>
+
+
+
+    
+    <script src="assets/js/materialize.min.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
